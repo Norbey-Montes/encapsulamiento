@@ -1,0 +1,66 @@
+<?php
+// class Persona {
+//     public $nombre;
+//     public $apellidos;
+//     public $edad;
+//     public $correo;
+
+//     // Método Constructor para inicializar los atributos al crear el objeto
+//     public function __construct($nombre, $apellidos, $edad, $correo) {
+//         $this->nombre = $nombre;
+//         $this->apellidos = $apellidos;
+//         $this->edad = $edad;
+//         $this->correo = $correo;
+//     }
+
+//     public function saludar() {
+//         return "Hola, me llamo $this->nombre $this->apellidos, tengo $this->edad años y mi correo es $this->correo.";
+//     }
+// }
+
+
+
+
+class Persona {
+    private $nombre;
+    private $apellidos;
+    private $edad;
+    private $correo;
+
+    // Constructor
+    public function __construct($nombre, $apellidos, $edad, $correo) {
+        $this->setNombre($nombre);
+        $this->setApellidos($apellidos);
+        $this->setEdad($edad);
+        $this->setCorreo($correo);
+    }
+
+    // Getters
+    public function getNombre() { return $this->nombre; }
+    public function getApellidos() { return $this->apellidos; }
+    public function getEdad() { return $this->edad; }
+    public function getCorreo() { return $this->correo; }
+
+    // Setters (tal como te los pidieron)
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    public function setApellidos($apellidos) {
+        $this->apellidos = $apellidos;
+    }
+
+    public function setEdad($edad) {
+        $this->edad = $edad;
+    }
+
+    public function setCorreo($correo) {
+        $this->correo = $correo;
+    }
+
+    // Método saludar
+    public function saludar() {
+        return "Hola, me llamo $this->nombre $this->apellidos, tengo $this->edad años y mi correo es $this->correo.";
+    }
+}
+?>
