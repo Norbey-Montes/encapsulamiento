@@ -29,7 +29,7 @@
 include 'persona.php';
 
 // 1. Creamos los 3 objetos usando el constructor
-$persona1 = new Persona("Chapinera", "Montes", 22, "chapinera@email.com");
+$persona1 = new Persona("Chapinera", "Ramirez", 22, "chapinera@email.com");
 $persona2 = new Persona("Carlos", "Pérez", 25, "carlos@email.com");
 $persona3 = new Persona("Ana", "Gómez", 23, "ana@email.com");
 
@@ -58,7 +58,7 @@ $persona2->setApellidos("Perez123");      // Apellido con números
     <h1>Listado de las 3 Personas (Atributos Privados)</h1>
 
     <!-- PRUEBA DIRECTA CON ECHO DEL GETNOMBRE -->
-    <p style="color:blue;"><strong>Prueba con echo de getNombre():</strong> 
+    <p style="color:black"><strong>Prueba con echo de getNombre():</strong> 
         <?php echo $persona1->getNombre(); ?>
     </p>
 
