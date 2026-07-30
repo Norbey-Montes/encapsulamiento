@@ -19,8 +19,6 @@
 // }
 
 
-
-
 class Persona {
     private $nombre;
     private $apellidos;
@@ -36,12 +34,15 @@ class Persona {
     }
 
     // Getters
-    public function getNombre() { return $this->nombre; }
+    public function getNombre() { 
+        return $this->nombre; 
+    }
+    
     public function getApellidos() { return $this->apellidos; }
     public function getEdad() { return $this->edad; }
     public function getCorreo() { return $this->correo; }
 
-    // Setters (tal como te los pidieron)
+    // Setters
     public function setNombre($nombre) {
         $this->nombre = $nombre;
     }
