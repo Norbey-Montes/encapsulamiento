@@ -25,8 +25,9 @@
 
 
 
-// Incluimos la clase
-include 'persona.php';
+// Incluimos la conexión y la clase con la ruta correcta desde la carpeta public
+include 'conexion.php';
+include '../clases/persona.php';
 
 // 1. Creamos los 3 objetos usando el constructor
 $persona1 = new Persona("Chapinera", "Ramirez", 22, "chapinera@email.com");
