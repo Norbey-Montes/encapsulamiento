@@ -23,11 +23,9 @@
 
 
 
-
-
-// Incluimos la conexión y la clase con la ruta correcta desde la carpeta public
-include 'conexion.php';
-include '../clases/persona.php';
+// Incluimos la conexión y el modelo subiendo un nivel con ../
+include '../config/conexion.php';
+include '../models/persona.php';
 
 // 1. Creamos los 3 objetos usando el constructor
 $persona1 = new Persona("Chapinera", "Ramirez", 22, "chapinera@email.com");

@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "tu_base_de_datos"; // Cambia por el nombre de tu base de datos
+$dbname = "encapsulamiento"; // <-- Cambia esto por el nombre real de tu base de datos
 $username = "root";
 $password = "";
 
