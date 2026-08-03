@@ -56,10 +56,7 @@ $persona2->setApellidos("Perez123");      // Apellido con números
 
     <h1>Listado de las 3 Personas (Atributos Privados)</h1>
 
-    <!-- PRUEBA DIRECTA CON ECHO DEL GETNOMBRE -->
-    <p style="color:black"><strong>Prueba con echo de getNombre():</strong> 
-        <?php echo $persona1->getNombre(); ?>
-    </p>
+    
 
     <hr>
 
