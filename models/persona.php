@@ -5,7 +5,6 @@ class Persona {
     private $edad;
     private $correo;
 
-    // Constructor
     public function __construct($nombre, $apellidos, $edad, $correo) {
         $this->setNombre($nombre);
         $this->setApellidos($apellidos);
@@ -14,40 +13,41 @@ class Persona {
     }
 
     // Getters
-    public function getNombre() { 
-        return $this->nombre; 
-    }
-    
+    public function getNombre() { return $this->nombre; }
     public function getApellidos() { return $this->apellidos; }
     public function getEdad() { return $this->edad; }
     public function getCorreo() { return $this->correo; }
 
-    // Setters
+    // Setters con validación
     public function setNombre($nombre) {
-        $this->nombre = $nombre;
+        if (is_string($nombre) && trim($nombre) !== "") {
+            $this->nombre = $nombre;
+        }
     }
 
     public function setApellidos($apellidos) {
-        $this->apellidos = $apellidos;
+        if (is_string($apellidos) && trim($apellidos) !== "" && !preg_match('/[0-9]/', $apellidos)) {
+            $this->apellidos = $apellidos;
+        }
     }
 
     public function setEdad($edad) {
-        $this->edad = $edad;
+        if (is_numeric($edad) && $edad >= 0 && $edad <= 120) {
+            $this->edad = $edad;
+        }
     }
 
     public function setCorreo($correo) {
-        $this->correo = $correo;
+        if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+            $this->correo = $correo;
+        }
     }
 
-    // Método saludar
     public function saludar() {
-        return "Hola, me llamo $this->nombre $this->apellidos, tengo $this->edad años y mi correo es $this->correo.";
+        return "Hola, me llamo {$this->nombre} {$this->apellidos}, tengo {$this->edad} años y mi correo es {$this->correo}.";
     }
 }
 ?>
-
-
-
 
 <!-- 
 // class Persona {

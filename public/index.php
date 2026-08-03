@@ -24,69 +24,97 @@
 
 
 // Incluimos la conexión y el modelo subiendo un nivel con ../
-include '../config/conexion.php';
-include '../models/persona.php';
+// include '../config/conexion.php';
 
-// 1. Creamos los 3 objetos usando el constructor
-$persona1 = new Persona("Chapinera", "Ramirez", 22, "chapinera@email.com");
+require_once '../models/persona.php';
+
+// Creación de las personas iniciales con tus datos
+$persona1 = new Persona("Norbey", "Montes", 22, "norbey@email.com");
+$persona2 = new Persona("Carlos", "Pérez", 25, "carlos@email.com");
+$persona3 = new Persona("Ana", "Gómez", 23, "ana@email.com");
+?>
+<?php
+require_once '../models/persona.php';
+
+// 1. Creación de las personas iniciales con tus datos
+$persona1 = new Persona("Norbey Steep", "Montes Ramírez", 22, "norbey@email.com");
 $persona2 = new Persona("Carlos", "Pérez", 25, "carlos@email.com");
 $persona3 = new Persona("Ana", "Gómez", 23, "ana@email.com");
 
-// 2. Modificamos información libremente usando los SET
-$persona1->setNombre("María");
-$persona1->setApellidos("Rodríguez");
-$persona2->setCorreo("carlos.nuevo@email.com");
-$persona3->setEdad(28);
-
-// 3. Intentamos asignar información incorrecta usando los SET
-$persona1->setEdad(-5);                   // Edad negativa
-$persona2->setEdad(150);                  // Edad extremadamente alta
-$persona3->setNombre("");                 // Nombre vacío
-$persona1->setCorreo("correo-sin-formato"); // Correo sin formato adecuado
-$persona2->setApellidos("Perez123");      // Apellido con números
+// 2. Ejecutamos todas las pruebas de información incorrecta de un solo golpe aquí arriba
+$persona1->setEdad(-5);
+$persona2->setEdad(200);
+$persona3->setNombre("   ");
+$persona1->setCorreo("correo-sin-formato");
+$persona2->setApellidos("Perez123");
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Clase Persona - Atributos Privados</title>
+    <title>Listado de Personas</title>
 </head>
 <body>
 
-    <h1>Listado de las 3 Personas (Atributos Privados)</h1>
+    <h2>Listado de Personas</h2>
 
-    
+    <h3>Información correcta</h3>
 
+    <!-- PERSONA 1 -->
+    <h4>Persona 1</h4>
+    <p><strong>Nombre:</strong> <?php echo $persona1->getNombre(); ?></p>
+    <p><strong>Apellidos:</strong> <?php echo $persona1->getApellidos(); ?></p>
+    <p><strong>Edad:</strong> <?php echo $persona1->getEdad(); ?></p>
+    <p><strong>Correo:</strong> <?php echo $persona1->getCorreo(); ?></p>
+    <p><strong>Mensaje:</strong> <?php echo $persona1->saludar(); ?></p>
     <hr>
 
-    <!-- MOSTRANDO LA INSTANCIA 1 -->
-    <h3>Datos de la Persona 1</h3>
-    <p><strong>Nombre:</strong> <?= $persona1->getNombre() ?></p>
-    <p><strong>Apellidos:</strong> <?= $persona1->getApellidos() ?></p>
-    <p><strong>Edad:</strong> <?= $persona1->getEdad() ?></p>
-    <p><strong>Correo:</strong> <?= $persona1->getCorreo() ?></p>
-    <p><strong>Mensaje:</strong> <?= $persona1->saludar() ?></p>
-
+    <!-- PERSONA 2 -->
+    <h4>Persona 2</h4>
+    <p><strong>Nombre:</strong> <?php echo $persona2->getNombre(); ?></p>
+    <p><strong>Apellidos:</strong> <?php echo $persona2->getApellidos(); ?></p>
+    <p><strong>Edad:</strong> <?php echo $persona2->getEdad(); ?></p>
+    <p><strong>Correo:</strong> <?php echo $persona2->getCorreo(); ?></p>
+    <p><strong>Mensaje:</strong> <?php echo $persona2->saludar(); ?></p>
     <hr>
 
-    <!-- MOSTRANDO LA INSTANCIA 2 -->
-    <h3>Datos de la Persona 2</h3>
-    <p><strong>Nombre:</strong> <?= $persona2->getNombre() ?></p>
-    <p><strong>Apellidos:</strong> <?= $persona2->getApellidos() ?></p>
-    <p><strong>Edad:</strong> <?= $persona2->getEdad() ?></p>
-    <p><strong>Correo:</strong> <?= $persona2->getCorreo() ?></p>
-    <p><strong>Mensaje:</strong> <?= $persona2->saludar() ?></p>
-
+    <!-- PERSONA 3 -->
+    <h4>Persona 3</h4>
+    <p><strong>Nombre:</strong> <?php echo $persona3->getNombre(); ?></p>
+    <p><strong>Apellidos:</strong> <?php echo $persona3->getApellidos(); ?></p>
+    <p><strong>Edad:</strong> <?php echo $persona3->getEdad(); ?></p>
+    <p><strong>Correo:</strong> <?php echo $persona3->getCorreo(); ?></p>
+    <p><strong>Mensaje:</strong> <?php echo $persona3->saludar(); ?></p>
     <hr>
 
-    <!-- MOSTRANDO LA INSTANCIA 3 -->
-    <h3>Datos de la Persona 3</h3>
-    <p><strong>Nombre:</strong> <?= $persona3->getNombre() ?></p>
-    <p><strong>Apellidos:</strong> <?= $persona3->getApellidos() ?></p>
-    <p><strong>Edad:</strong> <?= $persona3->getEdad() ?></p>
-    <p><strong>Correo:</strong> <?= $persona3->getCorreo() ?></p>
-    <p><strong>Mensaje:</strong> <?= $persona3->saludar() ?></p>
+
+    <h3>Pruebas de información incorrecta</h3>
+
+    <!-- PRUEBA 1 -->
+    <h4>Prueba 1: Edad negativa</h4>
+    <p>Edad -5 rechazada.</p>
+    <p>Edad actual: <?php echo $persona1->getEdad(); ?></p>
+
+    <!-- PRUEBA 2 -->
+    <h4>Prueba 2: Edad mayor a 120</h4>
+    <p>Edad 200 rechazada.</p>
+    <p>Edad actual: <?php echo $persona2->getEdad(); ?></p>
+
+    <!-- PRUEBA 3 -->
+    <h4>Prueba 3: Nombre vacío</h4>
+    <p>Nombre vacío rechazado.</p>
+    <p>Nombre actual: <?php echo $persona3->getNombre(); ?></p>
+
+    <!-- PRUEBA 4 -->
+    <h4>Prueba 4: Correo incorrecto</h4>
+    <p>Correo inválido rechazado.</p>
+    <p>Correo actual: <?php echo $persona1->getCorreo(); ?></p>
+
+    <!-- PRUEBA 5 -->
+    <h4>Prueba 5: Apellidos con números</h4>
+    <p>Apellido con números rechazado.</p>
+    <p>Apellidos actuales: <?php echo $persona2->getApellidos(); ?></p>
 
 </body>
 </html>
