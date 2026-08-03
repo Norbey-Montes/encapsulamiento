@@ -1,24 +1,4 @@
 <?php
-// class Persona {
-//     public $nombre;
-//     public $apellidos;
-//     public $edad;
-//     public $correo;
-
-//     // Método Constructor para inicializar los atributos al crear el objeto
-//     public function __construct($nombre, $apellidos, $edad, $correo) {
-//         $this->nombre = $nombre;
-//         $this->apellidos = $apellidos;
-//         $this->edad = $edad;
-//         $this->correo = $correo;
-//     }
-
-//     public function saludar() {
-//         return "Hola, me llamo $this->nombre $this->apellidos, tengo $this->edad años y mi correo es $this->correo.";
-//     }
-// }
-
-
 class Persona {
     private $nombre;
     private $apellidos;
@@ -65,3 +45,26 @@ class Persona {
     }
 }
 ?>
+
+
+
+
+<!-- 
+// class Persona {
+//     public $nombre;
+//     public $apellidos;
+//     public $edad;
+//     public $correo;
+
+//     // Método Constructor para inicializar los atributos al crear el objeto
+//     public function __construct($nombre, $apellidos, $edad, $correo) {
+//         $this->nombre = $nombre;
+//         $this->apellidos = $apellidos;
+//         $this->edad = $edad;
+//         $this->correo = $correo;
+//     }
+
+//     public function saludar() {
+//         return "Hola, me llamo $this->nombre $this->apellidos, tengo $this->edad años y mi correo es $this->correo.";
+//     }
+// } -->
